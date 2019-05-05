@@ -14,8 +14,8 @@ On mac, install with brew ```brew cask install chromedriver```
 Create a file with the name ```config.py```.
 In the file, fill out your user name(email address) and password. 
 ```
-USERNAME = \'username here\'
-PASSWORD = \'password here\'
+USERNAME = '__username_here__'
+PASSWORD = '__password_here__'
 ```
 ### List of Drivers
 In the file ```list.txt```, list driver names following the format of the examples
