@@ -12,7 +12,7 @@ Tool to scrape driver stats from iRacing.com
 
 ### 1
 Create a file with the name ```config.py```
-In the file, fill out your user name(email address) and password:
+In the file, fill out your user name(email address) and password
 ```USERNAME = 'username here'
 PASSWORD = 'password here'```
 
