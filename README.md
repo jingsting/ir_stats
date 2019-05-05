@@ -9,6 +9,7 @@ Tool to scrape driver stats from iRacing.com
   On mac, install with brew ```brew cask install chromedriver```
 
 ## Usage
+
 ### 1
 Create a file with the name ```config.py```
 In the file, fill out your user name(email address) and password:
