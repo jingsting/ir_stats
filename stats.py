@@ -1,6 +1,8 @@
 from config import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from tqdm import tqdm
+import time
 
 INPUT = 'id'
 
@@ -14,7 +16,7 @@ options.add_argument("--start-maximized")
 options.add_argument("--headless")
 # driver = webdriver.Chrome(options=options)
 driver = webdriver.Chrome()
-driver.implicitly_wait(5)
+driver.implicitly_wait(15)
 
 # login
 driver.get(LOGIN_URL)
@@ -26,7 +28,7 @@ driver.find_element_by_id('submit').click()
 stats = []
 with open('list.txt', 'r') as fin:
     lines = fin.readlines()
-for line in lines:
+for line in tqdm(lines):
     if INPUT == 'name':
         name = line.strip()
         driver.get(SEARCH_URL+name)
@@ -43,7 +45,7 @@ for line in lines:
     saftyno = saftyno.text.split()[2]
     irating = irating.text.split()[1]
     name = driver.find_element_by_class_name('image_area_name').text
-    print(name, custid, saftylt, saftyno, irating)
+    # print(name, custid, saftylt, saftyno, irating)
     stats.append(f'{name}, {custid}, {saftylt}, {saftyno}, {irating}')
 
 driver.quit()
